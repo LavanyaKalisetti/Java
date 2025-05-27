@@ -1,0 +1,9 @@
+INDEX VERSION 1.134+D:\Placement Assistance\Core Java\.metadata\.plugins\org.eclipse.jdt.core
+2614216947.index
+4150466385.index
+1944249848.index
+1865797976.index
+3639706748.index
+296974511.index
+279868512.index
+4209244686.index

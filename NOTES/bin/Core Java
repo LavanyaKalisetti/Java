@@ -1,0 +1,117 @@
+------------------------------------------------------------------------------------------------------------------------
+                                                INTERVIEW QUESTIONS
+------------------------------------------------------------------------------------------------------------------------
+
+1) What is the use of abstract method?
+   -abstract method is used for two reasons:
+   1.Force the subclass developers to provide implementation
+   2.Achieve Standardization of method signature
+  
+2) What do you mean by abstract method?
+   1.A method which is declare only in the method signature but no implementation 
+     is Called as incomplete method or abstract method.
+   2.An abstract method is created by using the keyword "abstract".
+  *3.If any class contains an abstract method then the class must also be  declare as "abstract".
+   4.The abstract method must be completed in the immediate sub class.
+     If it is not completed in the immediate sub class then the class must be declare a abstract
+     and the method can be completed in the next level of sub class.
+   5.A static method cannot be declare as abstract.
+   6.An abstract method can never be declare as final.
+   
+3) Is it compulsary to declare any class as abstract?
+   No,A class should be declared as abstract only in any of two situations:
+   1.If the class contains any abstract method then the class must be declared as abstract.
+   2.When we don't want to allow any one to create Object of the class
+ 
+4) Can a class contain both abstract method as well as concrete method?
+   Yes,A class can have both abstract and Concrete methods but class must be declared as "abstract".
+   
+5) Can an abstract class contain only concrete method?
+   Yes.
+   
+6) Can we constructor for an abstract class?
+   Yes and it will get executed by the help of super() call in sub class constructor
+   
+7) Can we create an abstract class as final?
+   No,because abstract class may contain abstract method which has to be completed in the subclass.
+   if you declare the abstract class as final then we cannot create its subclass which means we cannot 
+   complete the abstract method.hence, abstract cannot be declared as final.
+   
+8) What do you mean by Data Abstraction?
+   1.The process of hiding background details and providing only a essential features is called as
+     Abstraction.
+   2.Abstraction can be achieved by the help of abstract classes and interfaces.
+   
+   NOTE:-Hiding background details means not providing implementation to the method.
+        -Providing essential features means providing only the method signatures to the users.
+        -In projects the sub class developers does not have to worry about the implementation
+         designed by super class developer.The subclass developer has to worry about what implementation
+         has to be provided to the method in the subclass.
+
+9) What is the Disadvantage of abstraction using abstract class?
+   We cannot achieve multiple inheritance using abstract class.
+
+10) What are the limitations of abstract class?
+    1.we cannot create object of abstract class.
+    2.We cannot achieve 100% abstraction because abstract class can contain abstract method as well as concrete method.
+    3.we cannot achieve multiple inheritence using abstract classes
+
+11) What is an interface?
+    1.Interface is a type definition block.
+    2.It acts as a contract that tells what a class can do.
+
+12) What are the characteristics of an interface?
+    1.In an interface by default all the variables are:'public static final'.
+    2.All the methods are'public abstract'.
+    3.Interface doesn't have constructor.Hence,we can achieve multiple inheritence.
+    4.We can achieve 100% abstraction using interface.
+    
+13) How does an interface shares its properties to another interface?
+    By using 'extends' keyword.
+
+14) How does a class gets the properties from an interface?
+    By using 'implements' keyword.
+    
+ --------------   
+    ARRAYS
+ --------------   
+1) What is an Array?
+   1.Array is a Contigous memory location used to store multiple number of Homegeneous elements 
+     together in a shared memory.
+   2.The array is fixed in nature.
+   3.In an array we can store only same type of data.
+   4.We cannot add any extra element to array once it is created.
+   5.Array can be created in 
+      1.using new keyword
+        int arr[]=new int[size];
+      2.directly assigning value
+        int arr[]={10,20,30};
+      3.directly assign value with new keyword
+        int []arr=new int[]{10,20,30};       
+
+
+
+public class Base{
+  public static void main(String[] args){
+    int []arr=new int[5];
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter
+    
+    
+    for(int i=0;i<arr.length;i++){
+      arr[i]=Integer.parseInt(sc.nextLine());
+      }
+      sopln("All elements entered successfully");
+      sopln(
+      for(int i=0;i<arr.length(arr[i]){
+      arr[i];
+      }
+
+
+Optional java8 docs(java platform SE8)
+ 
+ 
+
+
+
+

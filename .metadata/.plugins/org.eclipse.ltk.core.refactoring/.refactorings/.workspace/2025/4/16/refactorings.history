@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Methods&apos; to &apos;Methods_Variables&apos;" description="Rename resource &apos;Methods&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/Methods" name="Methods_Variables" stamp="1744905236509" updateReferences="true"/>
+</session>

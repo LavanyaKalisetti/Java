@@ -1,0 +1,126 @@
+Java Virtual Machine (JVM):-
+      -The JVM is a part of the Java Runtime Environment (JRE) responsible for 
+       executing Java bytecode.
+      -It provides platform independence, memory management, and security.
+
+-------------------------------------------------------------------------------------
+                               JVM Architecture 
+---------------------------------------------------------------------------------------
+          +---------------------------+
+          |      Class Loader         |
+          +---------------------------+
+                      |
+                      v
+        +-----------------------------+
+        |     Runtime Data Areas      |
+        |                             |
+        | +-----------------------+   |
+        | |  Method Area          |   |
+        | +-----------------------+   |
+        | |  Heap                <----|----+
+        | +-----------------------+   |    |
+        | |  Java Stack           |   |    |
+        | +-----------------------+   |    |
+        | |  PC Register          |   |    |
+        | +-----------------------+   |    |
+        | |  Native Method Stack  |   |    |
+        +-----------------------------+    |
+                      |                    |
+                      v                    |
+              +--------------------+       |
+              | Execution Engine   |       |
+              +--------------------+       |
+              | +----------------+ |       |
+              | | Interpreter     | |       |
+              | +----------------+ |       |
+              | | JIT Compiler    | |       |
+              | +----------------+ |       |
+              | | Garbage Collector |<------+
+              +--------------------+
+                      |
+                      v
+         +----------------------------+
+         |    Native Interface (JNI)  |
+         +----------------------------+
+                      |
+                      v
+        +-----------------------------+
+        | Native Libraries (C/C++)    |
+        +-----------------------------+
+
+1. Class Loader Subsystem:-
+
+  -Loads .class files (compiled Java bytecode) into memory.
+  -Performs:
+          Loading: Reads class file.
+          Linking:
+                  -Verification (checks bytecode validity)
+                  -Preparation (allocates memory for static fields),
+                  -Resolution (resolves symbolic references).
+          Initialization: Initializes static variables and executes static blocks.
+
+2. Runtime Data Areas:-
+   a)Method Area
+           Stores class-level metadata:
+               -Class name
+               -Methods and fields
+               -Static variables
+               -Constant pool (e.g., string literals)
+   b)Heap
+          -Stores objects and their instance variables.
+          -Shared across all threads.
+          -Managed by the Garbage Collector.
+   c)Java Stack
+         -Stores frames for each method call.
+         -Each frame has:1)Local variables
+                         2)Operand stack
+                         3)Return values
+         -One stack per thread (thread-local).
+
+   d)PC Register (Program Counter)
+         -Holds the address of the current instruction being executed for each thread.
+         -Each thread has its own PC register.
+
+   e)Native Method Stack
+         -Used for executing native (non-Java) code, typically written in C/C++.
+         -Works with the JNI (Java Native Interface).
+
+3. Execution Engine
+   This is the heart of the JVM—it reads and executes bytecode.
+
+    a)Interpreter
+        -Reads and executes bytecode line-by-line.
+        -Simple and fast to start, but slower in long runs.
+
+    b)JIT (Just-In-Time) Compiler
+        -Converts hot code (frequently used bytecode) into native machine code.
+        -Improves performance by reducing interpretation overhead.
+
+    c)Garbage Collector
+        -Automatically reclaims memory by deleting objects no longer in use.
+        -Runs in background to free Heap space.
+
+4. Native Interface (JNI)
+   -Connects Java with native libraries written in other languages like C/C++.
+   -Allows access to platform-specific features or performance-critical code.
+
+5. Native Libraries
+   -These are platform-specific libraries loaded when needed via JNI.
+   -Often used for:
+                   1)Graphics (AWT/Swing),
+                   2)File I/O,
+                   3)Networking.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
