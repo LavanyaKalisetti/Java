@@ -1,0 +1,56 @@
+class Person {
+    String name;
+
+    public Person(String name) {
+        this.name = name;
+    }
+}
+
+class Student extends Person {
+    int sNo;
+    String Course;
+
+    public Student(String name, int sNo, String Course) {
+        super(name);
+        this.sNo = sNo;
+        this.Course = Course;
+    }
+}
+
+class Faculty extends Person {
+    int fNo;
+    String department;
+
+    public Faculty(String name, int fNo, String department) {
+        super(name);
+        this.fNo = fNo;
+        this.department = department;
+    }
+}
+
+class Admin extends Person {
+    int aNo;
+    String block;
+
+    public Admin(String name, int aNo, String block) {
+        super(name);
+        this.aNo = aNo;
+        this.block = block;
+    }
+}
+
+class Party {
+    public void eat(Person person) {
+        if (person instanceof Student) {
+            Student student = (Student) person;
+            System.out.println("SNo: " + student.sNo + ", Name: " + student.name + ", Course: " + student.Course);
+        }
+    }
+    public class Main {
+        public static void main(String[] args) {
+            Student s = new Student("Alice", 101, "Computer Science");
+            Party party = new Party();
+            party.eat(s);
+        }
+    }
+}

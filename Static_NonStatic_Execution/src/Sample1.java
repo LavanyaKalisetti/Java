@@ -1,0 +1,72 @@
+class Example1{
+	static int a=m1();
+	
+	static {
+		System.out.println("aa");
+	}
+	
+	int x=m2();
+	
+	{
+		System.out.println("bb");
+	}
+	
+	Example1(){
+		System.out.println("cc");
+	}
+	
+	static int m1() {
+		System.out.println("dd");
+		return 10;
+	}
+	
+	int m2() {
+		System.out.println("ee");
+		return 20;
+	}
+	
+	void abc() {
+		System.out.println("ff");
+	}
+	
+	void bbc() {
+		System.out.println("gg");
+	}
+}
+
+public class Sample1 extends Example1{
+	static int b=m3();
+		
+		static {
+			System.out.println("hh");
+		}
+		
+		int y=m4();
+			
+			{
+				System.out.println("ii");
+			}
+			Sample1(){
+				System.out.println("jj");
+			}
+			
+			static int m3() {
+				System.out.println("kk");
+				return 30;
+		}
+			
+			 int m4() {
+				System.out.println("ll");
+				return 40;
+		}
+			 
+			 void abc() {
+				 System.out.println("mm");
+	}
+			 public static void main(String[] args) {
+				 System.out.println("nn");
+				 Sample1 s=new Sample1();
+				 s.abc();
+				 s.bbc();
+			 }
+}

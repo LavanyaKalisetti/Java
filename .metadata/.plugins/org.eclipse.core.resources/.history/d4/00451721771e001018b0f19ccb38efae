@@ -1,0 +1,28 @@
+package com.nt.ListExamples;
+
+import java.util.List;
+
+public class ArrayListEx {
+	
+	    public static void main(String[] args) {
+	        List<String> fruits = new ArrayListEx<>();
+
+	        fruits.add("Apple");
+	        fruits.add("Banana");
+	        fruits.add("Mango");
+	        fruits.add("Banana");  // Allows duplicates
+
+	        System.out.println("Fruits: " + fruits);
+
+	        fruits.remove("Banana");  // Removes first occurrence
+	        System.out.println("After removing Banana: " + fruits);
+
+	        System.out.println("Contains Mango? " + fruits.contains("Mango"));
+
+	        // Iterate
+	        for (String fruit : fruits) {
+	            System.out.println(fruit);
+	        }
+	    }
+	}
+

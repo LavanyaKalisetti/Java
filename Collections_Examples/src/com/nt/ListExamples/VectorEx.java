@@ -1,0 +1,33 @@
+package com.nt.ListExamples;
+
+import java.util.List;
+import java.util.Vector;
+
+public class VectorEx {
+	
+	    public static void main(String[] args) {
+	    	
+	    	//Creating Vector
+	        List<Integer> numbers = new Vector<>();
+
+	        numbers.add(10);
+	        numbers.add(20);
+	        numbers.add(30);
+
+	        System.out.println("Numbers: " + numbers);
+
+	        numbers.remove(Integer.valueOf(20));
+
+	        // Random access (like ArrayList)
+	        System.out.println("First element: " + numbers.get(0));
+
+	        // Iterating
+	        for (int num : numbers) {
+	            System.out.println(num);
+	        }
+	        System.out.println("Numbers: " + numbers);
+	    }
+	}
+
+
+

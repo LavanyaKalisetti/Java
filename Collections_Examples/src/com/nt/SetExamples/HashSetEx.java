@@ -1,0 +1,29 @@
+package com.nt.SetExamples;
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class HashSetEx {
+	
+	    public static void main(String[] args) {
+	    	
+	    	//Creating HashSet
+	        Set<String> cities = new HashSet<>();
+
+	        cities.add("Delhi");
+	        cities.add("Mumbai");
+	        cities.add("Chennai");
+	        cities.add("Delhi");  // Ignored, no duplicates
+
+	        System.out.println("Cities: " + cities);
+
+	        cities.remove("Chennai");
+
+	        for (String city : cities) {
+	            System.out.println(city);
+	        }
+	    	
+	    }
+}
+	    	
+

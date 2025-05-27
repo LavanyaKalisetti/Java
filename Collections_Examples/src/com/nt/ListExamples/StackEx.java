@@ -1,0 +1,23 @@
+package com.nt.ListExamples;
+
+import java.util.Stack;
+
+public class StackEx {
+	
+	    public static void main(String[] args) {
+	    	
+	    	//Creating Stack
+	        Stack<Integer> stack = new Stack<>(); //Vector-->Stack
+
+	        stack.push(10);
+	        stack.push(20);
+	        stack.push(30);
+
+	        System.out.println("Top: " + stack.peek()); 
+
+	        while (!stack.isEmpty()) {
+	            System.out.println("Popped: " + stack.pop());
+	        }
+	    }
+	}
+

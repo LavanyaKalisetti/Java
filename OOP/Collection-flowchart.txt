@@ -1,0 +1,18 @@
+Collection
+ ├── List
+ │   ├── ArrayList
+ │   ├── LinkedList
+ │   └── Vector → Stack
+ ├── Set
+ │   ├── HashSet
+ │   ├── LinkedHashSet
+ │   └── TreeSet
+ └── Queue
+     ├── PriorityQueue
+     └── Deque → ArrayDeque
+
+Map (separate hierarchy)
+ ├── HashMap
+ ├── LinkedHashMap
+ ├── TreeMap
+ └── Hashtable

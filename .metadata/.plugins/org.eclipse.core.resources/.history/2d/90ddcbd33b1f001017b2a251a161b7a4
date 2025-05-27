@@ -1,0 +1,17 @@
+
+class A{
+	A(){
+		System.out.println("A");
+	}
+}
+
+ class Test extends A {
+	Test(){
+		System.out.println("B");
+	}
+
+}
+	public static void main(String[] args) {
+		Test b1=new Test();
+	}
+	}
