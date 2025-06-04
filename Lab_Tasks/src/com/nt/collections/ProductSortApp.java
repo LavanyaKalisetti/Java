@@ -1,6 +1,5 @@
 /*
 Create a class called Product which is accepting three components pid and pname and prices.
-
 Write one parametrized constructor to throw IllegalArgumentException if pid is zero or Negative.
 
 Create one TreeSet class which will hold the Custom product object.
@@ -11,18 +10,19 @@ With the help of TreeSet constructor using Comparator interface, write the logic
 2) Sort based on the pid in descending order.
 3) Sort based on the name in Alphabetical order.
 4) Sort based on the name in Reverse order.
+
  */
 package com.nt.collections;
 
 import java.util.Comparator;
 import java.util.TreeSet;
 
-class Product {
+class ProductInfo {
     private int pid;
     private String pname;
     private double price;
 
-    public Product(int pid, String pname, double price) {
+    public ProductInfo(int pid, String pname, double price) {
         if (pid <= 0) {
             throw new IllegalArgumentException("Product ID must be positive and non-zero");
         }
@@ -45,22 +45,22 @@ class Product {
 
     @Override
     public String toString() {
-        return "Product{pid=" + pid + ", pname='" + pname + "', price=" + price + '}';
+        return "ProductInfo{pid=" + pid + ", pname='" + pname + "', price=" + price + '}';
     }
 }
 
- class ProductTreeSetSortDemo {
+public class ProductSortApp {
     public static void main(String[] args) {
 
         // Sample products
-        Product p1 = new Product(3, "Mouse", 800.00);
-        Product p2 = new Product(1, "Laptop", 55000.00);
-        Product p3 = new Product(2, "Keyboard", 1500.00);
-        Product p4 = new Product(5, "Charger", 1200.00);
-        Product p5 = new Product(4, "Adapter", 1000.00);
+        ProductInfo p1 = new ProductInfo(3, "Mouse", 800.00);
+        ProductInfo p2 = new ProductInfo(1, "Laptop", 55000.00);
+        ProductInfo p3 = new ProductInfo(2, "Keyboard", 1500.00);
+        ProductInfo p4 = new ProductInfo(5, "Charger", 1200.00);
+        ProductInfo p5 = new ProductInfo(4, "Adapter", 1000.00);
 
         // 1. Sort by pid ascending
-        TreeSet<Product> sortByPidAsc = new TreeSet<>(Comparator.comparingInt(Product::getPid));
+        TreeSet<ProductInfo> sortByPidAsc = new TreeSet<>(Comparator.comparingInt(ProductInfo::getPid));
         sortByPidAsc.add(p1);
         sortByPidAsc.add(p2);
         sortByPidAsc.add(p3);
@@ -71,7 +71,7 @@ class Product {
         sortByPidAsc.forEach(System.out::println);
 
         // 2. Sort by pid descending
-        TreeSet<Product> sortByPidDesc = new TreeSet<>((a, b) -> Integer.compare(b.getPid(), a.getPid()));
+        TreeSet<ProductInfo> sortByPidDesc = new TreeSet<>((a, b) -> Integer.compare(b.getPid(), a.getPid()));
         sortByPidDesc.add(p1);
         sortByPidDesc.add(p2);
         sortByPidDesc.add(p3);
@@ -82,7 +82,7 @@ class Product {
         sortByPidDesc.forEach(System.out::println);
 
         // 3. Sort by name alphabetical
-        TreeSet<Product> sortByNameAlpha = new TreeSet<>(Comparator.comparing(Product::getPname, String.CASE_INSENSITIVE_ORDER));
+        TreeSet<ProductInfo> sortByNameAlpha = new TreeSet<>(Comparator.comparing(ProductInfo::getPname, String.CASE_INSENSITIVE_ORDER));
         sortByNameAlpha.add(p1);
         sortByNameAlpha.add(p2);
         sortByNameAlpha.add(p3);
@@ -93,7 +93,7 @@ class Product {
         sortByNameAlpha.forEach(System.out::println);
 
         // 4. Sort by name reverse alphabetical
-        TreeSet<Product> sortByNameReverse = new TreeSet<>((a, b) -> b.getPname().compareToIgnoreCase(a.getPname()));
+        TreeSet<ProductInfo> sortByNameReverse = new TreeSet<>((a, b) -> b.getPname().compareToIgnoreCase(a.getPname()));
         sortByNameReverse.add(p1);
         sortByNameReverse.add(p2);
         sortByNameReverse.add(p3);
