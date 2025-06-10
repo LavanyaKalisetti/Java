@@ -1,0 +1,121 @@
+Inner Classes:-
+==============
+->Inner classes are classes defined within another class. 
+->They are used to logically group classes that are only used in one place, 
+  increase encapsulation, and make the code more readable and maintainable.
+  
+Types of Inner Classes:-
+-----------------------
+Java supports four types of inner classes:
+  1)Non-static Inner Class (Regular Inner Class)
+  2)Static Nested Class
+  3)Local Inner Class (Inside a Method)
+  4)Anonymous Inner Class
+  
+ 
+1. Non-static Inner Class:
+   This class is associated with an instance of its enclosing class. 
+   It cannot define any static members.
+   
+   Example:-
+   package com.nt.innerclasses;
+
+   public class Outer {
+    private String message = "Hello! Lavanya.";
+
+    class Inner {
+        void display() {
+            System.out.println(message);
+        }
+    }
+
+    public static void main(String[] args) {
+        Outer outer = new Outer();
+        Outer.Inner inner = outer.new Inner(); 
+        inner.display();
+    }
+  }
+  
+  
+2)Static Nested Class:-
+  A static nested class can only access static members of the outer class directly. 
+  It does not need an instance of the outer class to be created.
+  Example:-
+  
+  package com.nt.innerclasses;
+
+  public class Outer1 {
+    private static String message = "Hey! Whatsapp";
+
+    static class Nested {
+        void show() {
+            System.out.println(message);
+        }
+    }
+
+    public static void main(String[] args) {
+        Outer1.Nested nested = new Outer1.Nested(); 
+        nested.show();
+    }
+  }
+  
+ 
+3)Local Inner Class (Inside a Method):-
+  This class is defined within a method and is only visible within that method. 
+  It can access local variables that are final or effectively final.
+  Example:-
+  
+  package com.nt.innerclasses;
+
+  public class Outer2 {
+    void outerMethod() {
+        String localVar = "Local variable";
+
+        // Local inner class
+        class LocalInner {
+            void print() {
+                System.out.println(localVar);
+            }
+        }
+
+        LocalInner inner = new LocalInner();
+        inner.print();
+    }
+
+    public static void main(String[] args) {
+        Outer2 outer = new Outer2();
+        outer.outerMethod();
+    }
+  }
+  
+4)Anonymous Inner Class:
+ Used when you want to provide the implementation of an interface or abstract class on the fly.
+ Example:-
+ package com.nt.innerclasses;
+
+ interface Greeting {
+    void sayHello();
+ } 
+
+ public class Outer3 {
+    public static void main(String[] args) {
+        // Anonymous inner class
+        Greeting g = new Greeting() {
+            public void sayHello() {
+                System.out.println("Hello from anonymous inner class!");
+            }
+        };
+
+        g.sayHello();
+    }
+  }
+ 
+Summary:-
+==========
+Type	                  Requires Outer Instance?	Access Outer Instance Members?	Static?
+----------------------    ------------------------  ------------------------------  -------
+Non-static Inner Class	           ✅ Yes	                   ✅ Yes	             ❌ No
+Static Nested Class	               ❌ No	                   ❌ No (only static)	 ✅ Yes
+Local Inner Class	               ✅ Yes (within method)	   ✅ Yes	             ❌ No
+Anonymous Inner Class	           ✅ Yes	                   ✅ Yes	             ❌ No
+  
